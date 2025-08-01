@@ -3,6 +3,7 @@ import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { FetchService } from './common/services/fetch';
 import { Environment } from './config/env';
 
 @Module({
@@ -20,6 +21,6 @@ import { Environment } from './config/env';
     }),
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, FetchService],
 })
 export class AppModule {}
